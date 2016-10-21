@@ -32,11 +32,11 @@ class RootViewController: UIViewController ,SearchKeywordDelegate{
     }
     
     func goSearchPage()  {
+        // 通过StoryBoard ID 来初始化窗口
         let mSearchPage = UIStoryboard(name: "SearchPage", bundle: nil).instantiateViewController(withIdentifier: "SearchPage") as! SearchPageController
-       // let mSearchPage UIStoryboard(name: "SearchPage", bundle: nil).instantiateInitialViewController() as ! SearchPageController
-        
-        // let mSearchPage = HomeCategoryController();
-        mSearchPage.mSearchKeywordDelegate = self
+        // 通过 ViewController
+        // let mSearchPage UIStoryboard(name: "SearchPage", bundle: nil).instantiateInitialViewController() as ! SearchPageController
+        mSearchPage.mSearchKeywordDelegate = self // 代理协议
         self.navigationController?.pushViewController(mSearchPage, animated: true)
         
     }
